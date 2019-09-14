@@ -1,0 +1,14 @@
+{
+  "name": "instadriver",
+  "version": "1.0.0",
+  "description": "Application that automates instagram engagement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Otha Hernandez",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  }
+}
