@@ -12,9 +12,21 @@ REMEMBER TO DELETE YOUR LOGIN CREDENTIALS BEFORE GIT PUSHING!!!!!!
 
 */
 const {Builder, By, Key, until} = require('selenium-webdriver');
+const _ = require('lodash');
 
 let username = "";
 let password = "";
+let intervalArray = _.range(28000, 3600)
+
+// Function for range without lodash
+// let range = (s, e) => Array.from('x'.repeat(e - s), (_, i) => s + i);
+
+// Sets a time limit on likes between 28-36 seconds
+// This is set in milliseconds
+
+// Instagram sets a daily like limit at 1000 for accounts older than 20 days.
+const LIKE_LIMIT = 1000;
+var picsLiked = 0;
 
 let driver = new Builder().forBrowser('chrome').build();
 
@@ -32,4 +44,8 @@ startBrower();
 const loginToAccount = (inputForUsername, inputForPassword) => {
   inputForUsername.sendKeys(username);
   inputForPassword.sendKeys(password, Key.RETURN)
+}
+
+const likeLoop = () => {
+  driver.sleep(_.sample(intervalArray));
 }
