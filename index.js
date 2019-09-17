@@ -30,7 +30,7 @@ var picsLiked = 0;
 
 let driver = new Builder().forBrowser('chrome').build();
 
-const startBrower = async () => {
+const startBrowser = async () => {
   await driver.get('https://www.instagram.com/accounts/login/?source=auth_switcher');
   await driver.sleep(3000);
   let inputForUsername = await driver.findElement(By.name('username'))
@@ -39,7 +39,7 @@ const startBrower = async () => {
   console.log(result);
 
 };
-startBrower();
+startBrowser();
 
 const loginToAccount = (inputForUsername, inputForPassword) => {
   inputForUsername.sendKeys(username);
